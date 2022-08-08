@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 块元素:会在页面中独占一行;默认宽度是父元素的全部（会把父元素撑满）;默认高度是被内容撑开（子元素） -->
+    <!-- 行内元素:不会独占页面的一行，只占自身的大小;行内元素在页面中左向右水平排列（书写习惯一致）
+    如果一行之中不能容纳下所有的行内元素，则元素会换到第二行继续自左向右排列
+    行内元素的默认宽度和高度都是被内容撑开
+     -->
+     <!-- 盒模型：常听的属性名：内容(content)、内边距(padding)、边框(border)、外边距(margin)，  -->
+     
+     <!-- ①内容区：盒子模型的中心，呈现了盒子的主要信息内容，这些内容可以是文本、图片等多种类型
+     元素中的所有的子元素和文本内容都在内容区中 -->
+     <style>
+        .box1{
+            width:200px;
+            height:200px;
+            background-color: #bfa;
+        /* ②边框（border）：边框属于盒子边缘，边框里边属于盒子内部，出了边框都是盒子的外部
+    边框的大小会影响到整个盒子的大小 */
+            border-width: 10px;
+            border-color: red;
+            border-style: solid;
+
+            /* 设定几个值就决定了对应方向的宽度、颜色或样式：
+            其顺序是按顺时针方向设置的，剩下的可以由矩形的对称性推导出来
+            四个值：上 右 下 左；三个值：上 左右 下；两个值：上下 左右；一个值：上下左右 */
+            /* border-width:10px 20px 30px; */
+
+            /* ③内边距：也叫填充，是内容区和边框之间的空间
+            内边距的设置会影响到盒子的大小，背景颜色会延伸到内边距上 */
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+            /* ④外边距，也叫空白边，位于盒子的最外围，是添加在边框外周围的空间。空白边使盒子之间不会紧凑地连接在一起，是CSS 布局的一个重要手段
+            注意：外边距不会影响盒子可见框的大小，但是外边距会影响盒子的位置和占用空间
+            元素在页面中是按照自左向右的顺序排列的，所以默认情况下，如果我们设置的左和上外边距则会移动元素自身，而设置下和右外边距会移动其他元素 */
+           margin-top: 100px; 
+           margin-right:100px;
+           margin-left: 100px;
+           margin-bottom: 100px;
+        }
+     </style>
+       <p class="box1"></p>
+     <!-- 水平方向布局：元素在其父元素中水平方向的位置由以下几个属性共同决定：
+     margin-left+border-left+padding-left+width+padding-right+border-right+margin-right
+    它们的和等于 父元素的宽度
+    以上等式必须满足，如果相加结果使等式不成立，则称为过渡约束，则等式会自动调整
+    若这7个值中没有auto,则会自动调整margin-right;
+    若这7个值中有auto的情况，则会自动调整auto值以使等式成立
+    这七个值中有三个值可以设置为auto ：width、margin-left、margin-right
+
+    如果某个值为auto，则会自动调整auto的那个值以使等式成立;
+    如果宽度为auto，则宽度会调整到最大，其他auto的外边距会自动设置为0
+    如果外边距都为auto，则auto的外边距会自动均分以使等式成立;
+    -->
+    <style >
+        .box2{
+              /* color:blue; */
+              background-color: #bfa;
+            margin-left:100px;
+            /* border-left:20px; */
+                border:10px orange solid;
+            /* padding-left: 50px; */
+            width:200px;height: 200px;
+            /* padding-right:50px; */
+            /* border-right:20px; */
+            margin-right:auto;
+        }
+    </style>
+    <div class="box2"></div>
+
+    <!-- 垂直方向布局：
+    元素溢出：子元素是在父元素的内容区中排列的，如果子元素的大小超过了父元素，则子元素会从父元素中溢出
+    使用overflow/overflow-x/overflow-y属性来设置父元素如何处理溢出的子元素
+    可选值：visible/hidden/scroll/auto -->
+    <style>
+        .box3{
+            width:200px;
+            height:200px;
+            background-color: aqua;
+            /* margin-left: 300px; */
+            /* visible 溢出内容会在父元素外部位置显示，默认值 */
+            overflow:visible;
+            
+            /* hidden:隐藏溢出内容,溢出内容会被裁剪，不会显示 */
+            /* overflow:hidden;  */
+            /* scroll 生成两个滚动条，通过滚动条来查看完整的内容 */
+            /* overflow:scroll; */
+            /* auto 根据需要生成滚动条 */
+            /* overflow:auto; */
+
+        }
+    </style>
+    <div class="box3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aspernatur illo inventore
+    deleniti laudantium quaerat excepturi sed quidem tempore? Eaque, cumque porro. Fuga quam error cupiditate quasi
+    eveniet in numquam!
+    </div>
+</body>
+</html>
