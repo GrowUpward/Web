@@ -100,5 +100,80 @@
     deleniti laudantium quaerat excepturi sed quidem tempore? Eaque, cumque porro. Fuga quam error cupiditate quasi
     eveniet in numquam!
     </div>
+    <!-- 边距折叠
+垂直外边距的重叠（折叠）：相邻的垂直方向外边距会发生重叠现象
+兄弟元素间的相邻，垂直外边距会取两者之间的较大值（两者都是正值）
+特殊情况：
+如果相邻的外边距一正一负，则取两者的和
+如果相邻的外边距都是负值，则取两者中绝对值较大的
+ -->
+ <style>
+    .box4,.box5{
+        width:200px;
+        height:200px;
+        font-size:100px;
+    }
+    .box4{
+        margin-top:100px;
+        background-color: #bfa;
+        margin-bottom:100px;
+    }
+    .box5{
+        background-color: orange;
+        margin-top:100px;
+    }
+
+    .box6{
+        width:200px;
+        height:199px;
+        background-color: #559977;
+        /* padding-top: 100px; *//*方式1：调整height和padding-top*/
+        border-top:1px #559977 solid;/*方式2:border让元素脱离了文档流（margin塌陷）*/
+    }
+    .box7{
+        width:100px;
+        height:100px;
+        background-color: blue;
+        /* margin-top: 100px; */
+        margin-top: 99px; 
+    }
+ </style>
+ <div class="box4"></div>
+ <div class="box5"></div>
+ <p>-------------------------------------------</p>
+ <!-- 父子元素间相邻外边距，子元素会传递给父元素（上外边距） -->
+ <div class="box6">
+    <div class="box7"></div>
+ </div>
+
+ 
+ <style>
+    .s1{
+         /* 行内元素设置了宽高也没用，不会生效 */
+         /* 行内元素可以设置padding，但是垂直方向padding不会影响页面的布局 */
+         /* padding:30px; */
+         /* 行内元素可以设置margin，垂直方向的margin不会影响页面的布局 */
+         margin:100px;
+        background-color: rgb(237, 176, 176);
+    /* display:设置元素的显示类型 */
+        /* inline将元素设置为行内元素;block将元素设置为块元素 
+        inline-block 将元素设置为行内块元素行内块，既可以设置宽度和高度又不会独占一行*/
+        /* table将元素设置为一个表格;none:元素不在页面显示 */
+        display:block;
+     /* visibility用来设置元素的显示状态 */
+     /* visible默认值，元素在页面中正常显示
+      hidden元素在页面中隐藏不显示，但是依然占据页面的位置
+      */
+        visibility:visible;
+    }
+    .box8{
+        width:100px;
+        height:100px;
+        /* background-color:blueviolet ; */
+        background-color: #bfa;
+    }
+ </style>
+ <span class="s1">我是span</span>
+ <div class="box8"></div>
 </body>
 </html>

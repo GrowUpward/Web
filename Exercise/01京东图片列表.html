@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>京东图片列表</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        ul{
+            width:190px;
+            height:470px;
+            overflow:hidden;
+            background-color: #F4F4F4;
+            /* padding: 0;去掉黑点 */
+            /* margin-left: -50px; */
+        }
+        ul>li:not(:last-child)
+        {
+            margin-bottom: 10px;
+        }
+        ul>li img{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- ① -->
+   <!-- <div>
+    <img src="./img/01.jpg" alt="">
+    <img src="./img/02.jpg" alt="">
+    <img src="./img/03.jpg" alt="">
+   </div> -->
+   <!-- ② -->
+   <ul>
+    <!-- href="javascript:;"去掉a标签的默认行为 -->
+    <li><a href="javascript:;"><img src="./img/01.jpg"></a></li>
+    <li><a href="javascript:;"><img src="./img/02.jpg"></a></li>
+    <li><a href="javascript:;"><img src="./img/03.jpg"></a></li>
+  </ul>
+
+</body>
+</html>
