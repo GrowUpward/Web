@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实例2</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <style>
+        .body{
+            /* 设置网页背景色 */
+            /* background-color: #bfa; */
+        }
+        .left-nav{
+            width:190px;
+            height:450px;
+            padding:10px 0;
+            background-color: #bfa;
+            /* margin:50px auto; */
+
+        }
+        .item{
+            /* margin:10px; */
+            height:25px;
+            /* 让文字在父元素中垂直居中，只需将line-height和父元素的height设置成一样 */
+            line-height: 25px;
+            /* 设置内边距，将文字右移 */
+            padding-left: 18px;
+            /* margin-left:18px;错误 */
+            background-color:rgb(234, 189, 189) ;
+             /* 文字大小 */
+             font-size: 14px;
+        }
+        /* 设置一个鼠标移入的状态 */
+        .item:hover{
+            background-color: #d9d9d9;
+        }
+        /* 设置文字样式 */
+        .item a{
+            /* 只是设置了文字大小，而‘/'没有设置 */
+            /* font-size: 14px; */
+                color:#333;
+                /* 去除下划线 */
+                text-decoration: none;
+        }
+        /* 文字颜色 */
+        .item a:hover{
+            color:#c81623;
+        }
+
+        ul{
+            width:190px;
+            height: 450px;
+            background-color: aqua;
+            padding:10px 0;
+        }
+        ul>li{
+            padding-left: 18px;
+            height:25px;
+            background-color: #bfa;
+            line-height: 25px;
+
+        }
+        ul>li:hover{
+            background-color: rgb(213, 195, 195);
+        }
+        ul>li a{
+            font: size 14px;
+            color:#333;
+            text-decoration: none;
+        }
+        a:hover{
+           color:#c81623;
+        }
+        ul>li span{
+            padding: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 方式1 -->
+    <nav class="left-nav">
+        <div class="item"><a href=#>家用电器</a></div>
+        <div class="item"><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></div>
+        <div class="item"><a href="#">电脑</a>/<a href="#">运营商</a>/<a href="#">数码</a></div>
+        <div class="item"><a href=#>家用电器</a></div>
+        <div class="item"><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></div>
+        <div class="item"><a href="#">电脑</a>/<a href="#">运营商</a>/<a href="#">数码</a></div>
+        <div class="item"><a href=#>家用电器</a></div>
+        <div class="item"><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></div>
+        <br>
+        <div class="item">
+            <!-- 回车会在网页中产生空格 -->
+            <a href="#">电脑</a>/
+            <a href="#">运营商</a>/
+            <a href="#">数码</a>
+        </div>
+
+    </nav>
+    <br>
+    <!-- 方式2 -->
+    <ul>
+        <li >
+            <a href="javascript:;">手机</a>
+            <span>/</span>
+            <a href="javascript:;">运营商</a>
+            <span>/</span>
+            <a href="javascript:;">数码</a>
+            <span>/</span>
+        </li>
+        <li >
+            <a href="javascript:;">电脑</a>
+            <span>/</span>
+            <a href="javascript:;">办公</a>
+            <span>/</span>
+            <a href="javascript:;">数码</a>
+            <span>/</span>
+        </li>
+        <li >
+            <a href="javascript:;">手机</a>
+            <span>/</span>
+            <a href="javascript:;">运营商</a>
+            <span>/</span>
+            <a href="javascript:;">数码</a>
+            <span>/</span>
+        </li>
+        <li >
+            <a href="javascript:;">手机</a>
+            <span>/</span>
+            <a href="javascript:;">运营商</a>
+            <span>/</span>
+            <a href="javascript:;">数码</a>
+            <span>/</span>
+        </li>
+    </ul>
+</body>
+</html>
